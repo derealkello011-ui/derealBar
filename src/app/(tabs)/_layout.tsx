@@ -1,35 +1,19 @@
-import CustomTabBar from '@/constants/CustomTabBar';
-import { useTheme } from '@/constants/ThemeContext';
+import DerealTabBar from '@/components/derealTabBar';
 import { Tabs } from 'expo-router';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const TabLayout = () => {
-    const { colors } = useTheme();
-    const insets = useSafeAreaInsets();
   return (
-      <Tabs
-          tabBar={(props) => <CustomTabBar {...props} />}
-          screenOptions={{
-              headerShown: false,
-              tabBarStyle: {
-                  bottom: insets.bottom,
-                  left: insets.left,
-                  right: insets.right,
-              }
-          }}>
-          
-          <Tabs.Screen name='index' options={{
-              title: 'Home',
-            //   tabBarIcon: ({focused, color}) => <Feather />
-          }} />
-
-          <Tabs.Screen name='profile' options={{
-              title: 'Profile',
-            //   tabBarIcon: ( { focused, color } ) => <Feather />
-          }} />
-
+    <Tabs
+      tabBar={props => <DerealTabBar {...props} />}
+      screenOptions={{ headerShown: false }}
+    >
+      <Tabs.Screen name='index' options={{ title: 'Home' }} />
+      <Tabs.Screen name='profile' options={{ title: 'Profile' }} />
+      <Tabs.Screen name='explore' options={{ title: 'Explore' }} />
+      <Tabs.Screen name='wallet' options={{ title: 'Wallet' }} />
+      <Tabs.Screen name='analytics' options={{ title: 'Analytics' }} />
     </Tabs>
-  )
-}
+  );
+};
 
-export default TabLayout
+export default TabLayout;

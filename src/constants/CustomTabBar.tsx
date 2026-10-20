@@ -47,13 +47,12 @@ export default CustomTabBar
 const styles = StyleSheet.create({
     tabBarContainer: {
         flexDirection: 'row',
-        paddingBottom: 20,
-        paddingTop: 10,
-        borderTopWidth: 1, 
-    },
-    tabButton: {
-        flex: 1,
+        bottom: 50,
+        position: 'absolute',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        justifyContent: 'center',
-    }
+        backgroundColor: '#fff',
+        marginHorizontal: 80,
+    },
+    
 });

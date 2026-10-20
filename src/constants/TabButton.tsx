@@ -1,4 +1,4 @@
-import { Pressable, Text } from 'react-native';
+import { Pressable, StyleSheet, Text } from 'react-native';
 import Animated, { useAnimatedStyle, withSpring } from 'react-native-reanimated';
 
 const AnimatedPressable = Animated.createAnimatedComponent( Pressable );
@@ -32,3 +32,14 @@ const TabButton = (
 }
 
 export default TabButton
+
+const styles = StyleSheet.create({
+    tabButton: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    tabBar: {
+        position: 'absolute'
+    }
+});
